@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Buscador de Editais - Início{% endblock %}
+
+{% block extra_css %}
+<style>
+
+  body {
+    background-image: url("{% static 'img/base2.png' %}");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-color: #002D5B;
+  }
+
+
+  /* Remove o conteúdo do header e footer padrão do base.html */
+  header.top-bar, div.bottom-bar, footer.footer {
+    display: none;
+  }
+
+  /* Estilos para o novo Header */
+  .main-header {
+    padding: 5px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-header .logo-editais {
+    height: 40px;
+  }
+  .main-header .navbar-nav .nav-link {
+    color: #333;
+    font-weight: bold;
+    margin: 0 15px;
+  }
+  .main-header .navbar-nav .nav-item .btn-planos {
+    background-color: #F8C000; /* Amarelo do botão 'Nossos Planos' */
+    color: #002D5B; /* Azul escuro do texto */
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+
+  .header-actions a {
+    color: #002D5B;
+    margin-left: 20px;
+    font-size: 1.2rem;
+  }
+  .header-actions .btn-login {
+    background: none;
+    border: 2px solid #002D5B;
+    color: #002D5B;
+    border-radius: 20px;
+    padding: 5px 25px;
+    font-weight: bold;
+  }
+
+  /* Seção Hero (Busca) */
+  .hero-section {
+    color: white;
+    padding: 80px 0;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    max-width: 500px;
+  }
+  .search-box {
+    position: relative;
+    margin-top: 30px;
+  }
+  .search-box input {
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+  .search-box .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #888;
+  }
+  .filters {
+    margin-top: 15px;
+  }
+
+  /* Seção de Resultados */
+  .results-section {
+    padding: 50px 0;
+    color: white;
+  }
+  .result-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .result-card .btn-saiba-mais {
+    background-color: #6c757d;
+    border: none;
+  }
+  .btn-liberar-recursos {
+    background-color: #F8C000;
+    color: #002D5B;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: bold;
+    border: none;
+  }
+
+  footer.main-footer {
+    font-size: 14px;
+  }
+
+  footer.main-footer h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  footer.main-footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+  footer.main-footer a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* Sub-footer com copyright */
+  .sub-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .spacer-lg {
+  height: 80px; /* ajuste conforme necessário */
+  }
+
+  .spacer-lg2 {
+  height: 50px; /* ajuste conforme necessário */
+  }
+
+  footer .footer-social i {
+  font-size: 1rem;
+  margin-left: 12px;
+  color: white;
+  }
+
+  @media (max-width: 768px) {
+    .footer-logo, .footer-social {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+{# O bloco de conteúdo do base.html original é usado para toda a página #}
+
+<header class="main-header">
+  <a href="#"><img src="{% static 'img/logo_buscador_editais.png' %}" alt="Buscador de Editais" class="logo-editais"></a>
+  
+  <nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Quem somos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nossa plataforma</a></li>
+        <li class="nav-item"><a href="#" class="btn btn-planos">Nossos Planos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="header-actions">
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="#"><i class="fas fa-bell"></i></a>
+    <a href="#"><i class="fas fa-user-circle"></i></a>
+    <a href="#" class="btn btn-login">Entrar (Login)</a>
+  </div>
+</header>
+
+<section class="hero-section">
+  <div class="container">
+    <div class="spacer-lg2"></div> <!-- Espaço grande, limpo e sem repetição -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h1>Confira agora os editais disponíveis de diversas áreas e fontes em um só lugar.</h1>
+      </div>
+    </div>
+    <div class="spacer-lg"></div> <!-- Espaço grande, limpo e sem repetição -->
+    <div class="search-box">
+      <input type="text" class="form-control" placeholder="Buscar">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="filters d-flex">
+      <div class="form-check me-3">
+        <input class="form-check-input" type="checkbox" value="" id="filter1">
+        <label class="form-check-label" for="filter1">Filter</label>
+      </div>
+      <div class="form-check me-3">
+        <input class="form-check-input" type="checkbox" value="" id="filter2">
+        <label class="form-check-label" for="filter2">Filter</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="filter3">
+        <label class="form-check-label" for="filter3">Filter</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="results-section">
+    <div class="container">
+      <h4 class="mb-4">Encontramos {{ editais.count }} edital(is) que têm a ver com o seu perfil:</h4>
+      <div class="row">
+
+        {% for edital in editais %}
+        <div class="col-md-6">
+          <div class="result-card">
+            <h5>{{ edital.titulo }}</h5>
+            <p>
+              Abertura: {{ edital.data_abertura|date:"d/m/Y" }}<br>
+              Final: {{ edital.data_final|date:"d/m/Y" }}
+            </p>
+            <a href="{{ edital.link_oficial }}" target="_blank" class="btn btn-secondary btn-saiba-mais">Saiba mais</a>
+          </div>
+        </div>
+        {% empty %}
+          <p class="text-center">Nenhum edital encontrado.</p>
+        {% endfor %}
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a href="#" class="btn btn-liberar-recursos">Libere todos os recursos</a></li>
+          </ul>
+          </div>
+        </nav>
+      </div>
+      </div>
+  </section>
+
+<footer class="main-footer pt-2 pb-4 text-white">
+  <div class="container">
+    <!-- LOGO E REDES SOCIAIS CENTRALIZADAS -->
+    <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+      <!-- Logo à esquerda -->
+      <div class="footer-logo">
+        <img src="{% static 'img/logo_inovafapto_branco.png' %}" alt="Logo InovaFapto" style="height: 60px;">
+      </div>
+
+      <!-- Redes sociais à direita -->
+      <div class="footer-social text-end">
+        <span class="fw-bold text-white mb-0">Acompanhe nossas redes sociais:</span>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+
+    <hr style="border-color: rgba(255, 255, 255, 0.2);">
+
+    <!-- COLUNAS DE CONTEÚDO -->
+    <div class="row mt-4">
+      <div class="col-md-3 mb-4">
+        <h5>Onde estamos</h5>
+        <p>
+          <i class="fas fa-map-marker-alt me-2"></i>
+          <a href="https://maps.app.goo.gl/YYXXmYzhMsL2mnPa6">Orla 14 Avenida Parque, QI 04 Lote 03 Graciosa - Orla 14 CEP: 77026-035 Palmas - TO</a>
+        </p>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5>Institucional</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Nossos Planos</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">SAC</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5>Links Úteis</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Portal do Coordenador</a></li>
+          <li><a href="#">Editais Recentes</a></li>
+          <li><a href="#">Canal de Denúncias</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5>Fale Conosco</h5>
+        <p><i class="fas fa-envelope me-2"></i>buscador@inovafapto.org.br</p>
+        <p><i class="fab fa-whatsapp me-2"></i>+55 (63) 9 8413-1787</p>
+        <p><i class="fas fa-phone-alt me-2"></i>+55 (63) 3208-5698</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div class="sub-footer">
+  &reg; Copyright 2025, Todos os direitos reservados ao Centro de Inovação - InovaFapto
+</div>
+
+{% endblock %}
