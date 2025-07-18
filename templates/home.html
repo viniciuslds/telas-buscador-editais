@@ -4,16 +4,22 @@
 {% block title %}Buscador de Editais - Início{% endblock %}
 
 {% block content %}
-<section class="hero-section">
+
+<section class="hero-title-section">
     <div class="container">
-        <h1>Confira agora os editais disponíveis de diversas áreas e fontes em um só lugar.</h1>
-        <div class="spacer-lg"></div> <!-- Espaço grande, limpo e sem repetição -->
+        <h1>Confira agora os editais disponíveis <br> de diversas áreas e fontes em um só lugar.</h1>
+    </div>
+</section>
+
+<section class="hero-search-section">
+    <div class="container">
         <div class="search-container">
             <div class="search-box">
                 <input type="text" class="form-control" placeholder="Buscar por palavra-chave, área ou instituição...">
                 <i class="fas fa-times-circle clear-icon" style="display: none;"></i>
                 <i class="fas fa-search search-icon"></i>
             </div>
+            <div class="spacer-min"></div>
             <div class="filters d-flex">
                 <div class="form-check me-3">
                     <input class="form-check-input" type="checkbox" value="" id="filter1">
@@ -29,34 +35,25 @@
                 </div>
             </div>
         </div>
+        <div class="spacer-lg"></div>
     </div>
-</section>
-
-<section class="results-section">
-    <div class="container">
+        <div class="container">
         <h4 class="mb-4">Encontramos 2 editais que têm tudo a ver com o seu perfil:</h4>
         <div class="row">
-            {# Exemplo de card - o seu loop {% for %} viria aqui #}
-            <div class="col-md-6">
-                <div class="result-card">
-                    <h5>Título do Edital Exemplo 1</h5>
-                    <p>
-                        Abertura: 15/07/2025<br>
-                        Final: 15/08/2025
-                    </p>
-                    <a href="#" class="btn btn-secondary btn-saiba-mais">Saiba mais</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="result-card">
-                    <h5>Título do Edital Exemplo 2</h5>
-                    <p>
-                        Abertura: 20/07/2025<br>
-                        Final: 20/09/2025
-                    </p>
-                    <a href="#" class="btn btn-secondary btn-saiba-mais">Saiba mais</a>
-                </div>
-            </div>
+            {% for edital in editais %}
+        <div class="col-md-6">
+          <div class="result-card">
+            <h5>{{ edital.titulo }}</h5>
+            <p>
+              Abertura: {{ edital.data_abertura|date:"d/m/Y" }}<br>
+              Final: {{ edital.data_final|date:"d/m/Y" }}
+            </p>
+            <a href="{{ edital.link_oficial }}" target="_blank" class="btn btn-secondary btn-saiba-mais">Saiba mais</a>
+          </div>
+        </div>
+        {% empty %}
+          <p class="text-center">Nenhum edital encontrado.</p>
+        {% endfor %}
         </div>
         <div class="text-center mt-4">
              <a href="#" class="btn btn-liberar-recursos">Libere todos os recursos</a>
