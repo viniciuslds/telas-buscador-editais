@@ -295,3 +295,16 @@ footer .footer-social i {
     font-size: 2rem; /* Levemente ajustado */
     font-weight: 400; /* Mantém a fonte fina e elegante */
 }
+
+.quem_somos_desafio-section {
+    background-image: url("../img/hero-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: rgb(228, 226, 226);
+    font-size: 2.4rem; /* Levemente ajustado */
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: 1.5;
+}
