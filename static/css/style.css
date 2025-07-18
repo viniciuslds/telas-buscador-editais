@@ -280,3 +280,18 @@ footer .footer-social i {
     background-size: cover;
     color: white;
 }
+
+
+
+
+/* telas do quem somos*/
+.quem_somos-section {
+
+    background-image: url("../img/quemsomos.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-size: 2rem; /* Levemente ajustado */
+    font-weight: 400; /* Mantém a fonte fina e elegante */
+}

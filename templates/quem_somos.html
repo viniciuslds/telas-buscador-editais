@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Quem Somos{% endblock %}
+
+{% block content %}
+
+<section class="quem_somos-section py-5">
+    <div class="spacer-lg"></div>
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-md-7">
+                <h2 class="mb-4 fw-bold">Quem somos</h2>
+                <p class="lead fs-4">
+                    Somos a Fapto – Fundação de Apoio Científico e Tecnológico <br> do Tocantins, uma instituição comprometida com <br> o fomento à ciência, à inovação e ao <br>desenvolvimento social.
+                </p>
+            </div>
+
+            <div class="col-md-5 text-end">
+                <img src="{% static 'img/logo_fapto_branca.png' %}" alt="Logo da FAPTO" class="img-fluid" style="max-width: 300px;">
+            </div>
+
+        </div>
+    </div>
+    <div class="spacer-lg"></div>
+</section>
+
+{% endblock %}
