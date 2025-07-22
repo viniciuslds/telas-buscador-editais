@@ -292,7 +292,8 @@ footer .footer-social i {
     background-position: center;
     background-size: cover;
     color: white;
-    font-size: 2rem; /* Levemente ajustado */
+    font-family:'CamingoMono Light', sans-serif;
+    font-size: 2.1rem; /* Levemente ajustado */
     font-weight: 400; /* Mantém a fonte fina e elegante */
 }
 
@@ -302,9 +303,9 @@ footer .footer-social i {
     background-position: center;
     background-size: cover;
     color: rgb(228, 226, 226);
-    font-size: 2.4rem; /* Levemente ajustado */
+    font-size: 2.1rem; /* Levemente ajustado */
     text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'CamingoMono Light', sans-serif;
     font-style: normal;
     line-height: 1.5;
 }
