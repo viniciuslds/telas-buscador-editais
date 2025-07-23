@@ -37,7 +37,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Início</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'quem_somos' %}active{% endif %}" href="{% url 'quem_somos' %}">Quem somos</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'plataforma' %}active{% endif %}" href="#">Nossa plataforma</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'nossa_plataforma' %}active{% endif %}" href="{% url 'nossa_plataforma' %}">Nossa plataforma</a></li>
                 <li class="nav-item"><a href="#" class="btn btn-planos">Nossos Planos</a></li>
             </ul>
         </div>
