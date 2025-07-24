@@ -66,9 +66,9 @@
             </div>
             <div class="footer-social text-end">
                 <span class="fw-bold text-white mb-0">Acompanhe nossas redes sociais:</span>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@fapto1625"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/fapto/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/inovafapto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -82,25 +82,40 @@
             <div class="col-md-3 mb-4">
                 <h5>Institucional</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">Quem somos</a></li>
-                    <li><a href="#">Nossos Planos</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">SAC</a></li>
+                    <li><a href="{% url 'home' %}">Início</a></li>
+                    <li><a href="{% url 'quem_somos' %}">Quem Somos</a></li>
+                    <li><a href="{% url 'nossa_plataforma' %}">Nossa Plataforma</a></li>
+                    <li><a href="{#}">Nossos Planos</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
                 <h5>Links Úteis</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">Portal do Coordenador</a></li>
+                    <li><a href="https://sistemas.fapto.org.br/portalcoordenador/gui/login/login.aspx">Portal do Coordenador</a></li>
                     <li><a href="#">Editais Recentes</a></li>
                     <li><a href="#">Canal de Denúncias</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
                 <h5>Fale Conosco</h5>
-                <p><i class="fas fa-envelope me-2"></i>buscador@inovafapto.org.br</p>
-                <p><i class="fab fa-whatsapp me-2"></i>+55 (63) 9 8413-1787</p>
-                <p><i class="fas fa-phone-alt me-2"></i>+55 (63) 3208-5698</p>
+
+            <p>
+                <a href="mailto:buscador@inovafapto.org.br" class="footer-contact-link">
+                    <i class="fas fa-envelope me-2"></i>buscador@inovafapto.org.br
+                </a>
+            </p>
+
+            <p>
+                <a href="https://wa.me/5563984131787?text=Ol%C3%A1%20vim%20pelo%20buscador%20de%20editais%2C%20gostaria%20de%20saber%20mais." target="_blank" class="footer-contact-link">
+                    <i class="fab fa-whatsapp me-2"></i>+55 (63) 9 8413-1787
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:+556332085698" class="footer-contact-link">
+                    <i class="fas fa-phone-alt me-2"></i>+55 (63) 3208-5698
+                </a>
+            </p>
             </div>
         </div>
     </div>
