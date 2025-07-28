@@ -67,75 +67,54 @@
 }
 
 .testimonials-section {
-    padding-top: 60px;
-    padding-bottom: 80px;
-    background-color: #081430;
+    padding: 80px 0;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'CamingoMono Light', sans-serif;
 }
 
 .testimonial-card {
-    color: #e0e0e0;
-    padding: 20px;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.1rem;
+    color: #333333;
+}
+
+.testimonial-author-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.testimonial-text-content {
+    flex: 1;
 }
 
 .testimonial-quote {
-    font-style: italic;
-    margin-bottom: 20px;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: #222222;
+    margin-bottom: 10px;
     position: relative;
-    padding-left: 25px;
-    /* Adicione text-align: left aqui também para garantir */
-    text-align: left; 
+    padding-left: 0;
 }
 
 .testimonial-quote::before {
-    content: '“';
-    position: absolute;
-    left: 0;
-    top: -10px;
-    font-size: 2.5rem;
-    color: #4d88ff;
-    font-family: serif;
+    content: none; /* remove aspas decorativas */
 }
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* Adicione text-align: left para o container do autor */
-    text-align: left;
+.testimonial-author-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #000000;
+    margin-top: 0;
 }
 
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #4d88ff;
-}
-
-.author-info strong {
-    display: block;
-    color: #ffffff;
-}
-
-.author-info span {
-    font-size: 0.9rem;
-    color: #b0b0b0;
-}
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #000000;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dot.active {
-    background-color: #ffffff;
-}
 
