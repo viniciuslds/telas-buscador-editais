@@ -66,55 +66,75 @@
     margin-bottom: 0;
 }
 
+/* --- SEÇÃO DE DEPOIMENTOS MODIFICADA --- */
 .testimonials-section {
-    padding: 80px 0;
-    background-color: #ffffff;
-    color: #000000;
-    font-family: 'CamingoMono Light', sans-serif;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #d1cfcf; /* Fundo branco, como na referência */
+    font-family: 'CamingoMono Light', sans-serif; /* Mantive a fonte, ajuste se necessário */
 }
 
+/* --- CARD DE DEPOIMENTO MODIFICADO --- */
 .testimonial-card {
-    background-color: transparent;
-    border-radius: 0;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    background-color: transparent; /* Remove o fundo do card */
+    padding: 0;
+    margin-bottom: 30px;
     display: flex;
-    align-items: center;
-    gap: 30px;
-    font-size: 1.1rem;
-    color: #333333;
+    align-items: center; /* Alinha a imagem e o texto verticalmente */
+    gap: 20px; /* Espaço entre a imagem e o texto */
 }
 
-.testimonial-author-img {
-    width: 100px;
-    height: 100px;
+/* --- IMAGEM MODIFICADA --- */
+.testimonial-img {
+    width: 120px; /* Imagem maior, como na referência */
+    height: 120px;
     border-radius: 50%;
-    object-fit: cover;
     flex-shrink: 0;
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
 }
 
-.testimonial-text-content {
-    flex: 1;
-}
-
+/* --- CITAÇÃO MODIFICADA --- */
 .testimonial-quote {
-    font-style: normal;
-    font-size: 1.2rem;
-    color: #222222;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 0;
+    font-style: normal; /* Remove o itálico */
+    font-size: 1.1rem; /* Tamanho da fonte ajustado */
+    color: #333; /* Cor do texto escura */
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin: 20px 0; /* Espaçamento entre a citação e o autor */
+    padding: 20px 100px 20px 20px; /* Espaçamento interno */
+    text-align: justify;
 }
 
-.testimonial-quote::before {
-    content: none; /* remove aspas decorativas */
-}
+/* REGRA ::BEFORE REMOVIDA, pois não há aspas na referência */
 
-.testimonial-author-name {
-    font-weight: bold;
-    font-size: 1rem;
+/* --- AUTOR MODIFICADO --- 
+ Nova classe para o autor, que agora fica dentro da citação 
+.testimonial-author {
+    font-weight: bold; Deixa o nome em negrito 
+}*/
+
+.testimonial-author {
+    font-weight: normal;
     color: #000000;
     margin-top: 0;
 }
 
+
+/* --- PONTOS DO CARROSSEL MODIFICADOS --- */
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #636262; /* Cor do ponto inativo */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #141414; /* Cor do ponto ativo */
+}
 
