@@ -89,36 +89,105 @@
 </section>
 <section class="testimonials-section">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="testimonial-card">
-                    <img src="{% static 'img/mulher.jpeg' %}" alt="Foto de Leticia Silva" class="testimonial-img">
-                    
-                    <p class="testimonial-quote">
-                        "Economizei horas de trabalho com o Buscador de Editais. Agora, recebo alertas automáticos e foco no que realmente importa: escrever bons projetos."
-                        <span class="testimonial-author"><strong>- Leticia Silva</strong>, pesquisadora</span>
-                    </p>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row px-4"> <!-- ESSENCIAL! -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/mulher.jpeg' %}" class="testimonial-img" alt="Leticia Silva">
+                                <p class="testimonial-quote">"Economizei horas de trabalho com o Buscador de Editais..."<br><span class="testimonial-author"><strong>- Leticia Silva</strong>, pesquisadora</span></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/homem.jpg' %}" class="testimonial-img" alt="Carlos Mendes">
+                                <p class="testimonial-quote">"É como ter uma equipe de monitoramento 24h..."<br><span class="testimonial-author"><strong>- Carlos Mendes</strong>, ONG EcoVida</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row px-4"> <!-- ESSENCIAL! -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/mulher2.jpeg' %}" class="testimonial-img" alt="Ana Costa">
+                                <p class="testimonial-quote">"Facilitou muito meu acesso aos editais mais relevantes."<br><span class="testimonial-author"><strong>- Ana Costa</strong>, empreendedora</span></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/homem2.jpg' %}" class="testimonial-img" alt="Rafael Souza">
+                                <p class="testimonial-quote">"Com poucos cliques encontro oportunidades para minha startup."<br><span class="testimonial-author"><strong>- Rafael Souza</strong>, fundador da Inova+</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="row px-4"> <!-- ESSENCIAL! -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/mulher3.jpeg' %}" class="testimonial-img" alt="Mariana Lima">
+                                <p class="testimonial-quote">"Economiza tempo e ainda me dá confiança na hora de submeter projetos."<br><span class="testimonial-author"><strong>- Mariana Lima</strong>, produtora cultural</span></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="testimonial-card">
+                                <img src="{% static 'img/homem3.jpg' %}" class="testimonial-img" alt="João Pereira">
+                                <p class="testimonial-quote">"Antes eu perdia prazos, agora tudo está centralizado."<br><span class="testimonial-author"><strong>- João Pereira</strong>, pesquisador</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-lg-6">
-                <div class="testimonial-card">
-                    <img src="{% static 'img/homem.jpg' %}" alt="Foto de Carlos Mendes" class="testimonial-img">
 
-                    <p class="testimonial-quote">
-                        "É como ter uma equipe de monitoramento 24h. Recomendo para toda organização que quer captar recursos com mais eficiência."
-                        <span class="testimonial-author"><strong>- Carlos Mendes</strong>, ONG EcoVida</span>
-                    </p>
-                </div>
+            <div class="carousel-dots mt-4">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="dot" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="dot" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="dot" aria-label="Slide 3"></button>
             </div>
-        </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var carousel = document.getElementById('testimonialCarousel');
+                    var dots = carousel.querySelectorAll('.carousel-dots .dot');
+                    var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
 
-        <div class="carousel-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+                    function updateDots() {
+                        var activeIndex = Array.from(carousel.querySelectorAll('.carousel-item')).findIndex(item => item.classList.contains('active'));
+                        dots.forEach((dot, idx) => {
+                            if (idx === activeIndex) {
+                                dot.classList.add('active');
+                                dot.setAttribute('aria-current', 'true');
+                            } else {
+                                dot.classList.remove('active');
+                                dot.removeAttribute('aria-current');
+                            }
+                        });
+                    }
+
+                    carousel.addEventListener('slid.bs.carousel', updateDots);
+
+                    // Also update on dot click (for instant feedback)
+                    dots.forEach((dot, idx) => {
+                        dot.addEventListener('click', function () {
+                            setTimeout(updateDots, 600); // Wait for slide transition
+                        });
+                    });
+
+                    updateDots();
+                });
+            </script>
         </div>
     </div>
 </section>
+
 
 {% endblock %}

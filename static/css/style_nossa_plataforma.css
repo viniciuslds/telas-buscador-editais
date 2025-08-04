@@ -78,10 +78,10 @@
 .testimonial-card {
     background-color: transparent; /* Remove o fundo do card */
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center; /* Alinha a imagem e o texto verticalmente */
-    gap: 20px; /* Espaço entre a imagem e o texto */
+    gap: 10px; /* Espaço entre a imagem e o texto */
 }
 
 /* --- IMAGEM MODIFICADA --- */
@@ -99,8 +99,8 @@
     font-size: 1.1rem; /* Tamanho da fonte ajustado */
     color: #333; /* Cor do texto escura */
     line-height: 1.6; /* Melhora a legibilidade */
-    margin: 20px 0; /* Espaçamento entre a citação e o autor */
-    padding: 20px 100px 20px 20px; /* Espaçamento interno */
+    margin: 0; /* Espaçamento entre a citação e o autor */
+    padding: 0; /* Espaçamento interno */
     text-align: justify;
 }
 
@@ -126,8 +126,8 @@
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
+    height: 15px;
+    width: 15px;
     margin: 0 5px;
     background-color: #636262; /* Cor do ponto inativo */
     border-radius: 50%;
@@ -137,4 +137,12 @@
 .dot.active {
     background-color: #141414; /* Cor do ponto ativo */
 }
+
+
+.carousel-item .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centraliza horizontalmente */
+}
+
 
