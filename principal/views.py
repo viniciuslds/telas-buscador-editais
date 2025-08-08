@@ -27,3 +27,10 @@ def nossa_plataforma(request):
 
     # Renderiza o template quem_somos.html, passando os dados falsos
     return render(request, 'nossa_plataforma.html')
+
+
+def nossos_planos(request):
+
+
+    # Renderiza o template quem_somos.html, passando os dados falsos
+    return render(request, 'nossos_planos.html')

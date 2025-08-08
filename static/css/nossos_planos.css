@@ -1,0 +1,74 @@
+.nossos_planos-section {
+    background-image: url("../img/nossos_planos.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-family:'CamingoMono Light', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+.nossos_planos_planos-section {
+    background-image: url("../img/hero-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: rgb(228, 226, 226);
+    font-size: 1.7rem;
+    text-align: justify; /* Pode manter isso para o parágrafo principal, se desejar */
+    font-family:'CamingoMono Light', sans-serif;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.card {
+    background: linear-gradient(to bottom, #0077cc, #005fa3);
+    border-radius: 30px;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    }
+
+.card.recomendado {
+    height: 600px;
+    position: relative;
+    }
+
+.card.recomendado::before {
+    content: '★';
+    font-size: 80px;
+    color: gold;
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+.card.recomendado::after {
+    content: 'Recomendado';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.planos-container {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-end;
+}

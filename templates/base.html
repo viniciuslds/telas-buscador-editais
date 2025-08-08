@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Buscador de Editais{% endblock %}</title>
-    
+
     {% load bootstrap5 static %}
     {% bootstrap_css %}
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_quem_somos.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_nossa_plataforma.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/nossos_planos.css' %}">
+
     <link rel="icon" type="image/png" href="{% static 'img/Favcon.png' %}">
 
     {% block extra_css %}{% endblock %}
@@ -30,7 +31,7 @@
 
 <header class="main-header">
     <a href="{% url 'home' %}"><img src="{% static 'img/logo_buscador_editais.png' %}" alt="Buscador de Editais" class="logo-editais"></a>
-    
+
     <nav class="navbar navbar-expand-lg">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,7 @@
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Início</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'quem_somos' %}active{% endif %}" href="{% url 'quem_somos' %}">Quem somos</a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'nossa_plataforma' %}active{% endif %}" href="{% url 'nossa_plataforma' %}">Nossa plataforma</a></li>
-                <li class="nav-item"><a href="#" class="btn btn-planos">Nossos Planos</a></li>
+                <li class="nav-item"><a class="btn btn-planos" {% if request.resolver_match.url_name == 'nossos_planos' %}active{% endif %}" href="{% url 'nossos_planos' %}">Nossos Planos</a></li>
             </ul>
         </div>
     </nav>
